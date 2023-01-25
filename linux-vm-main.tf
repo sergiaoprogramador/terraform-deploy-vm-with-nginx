@@ -26,11 +26,6 @@ resource "google_compute_instance" "vm_instance_poc_terraform" {
     automatic_restart = false
   }
 
-    metadata = {
-        ssh-keys = "${var.ssh_username}:${file(var.ssh_pub_key_path)}"
-    }
-    # doc https://medium.com/google-cloud/a-ci-cd-solution-in-under-10-minutes-featuring-terraform-ansible-and-drone-ci-on-gcp-16bba497c655
-
   network_interface {
     network    = google_compute_network.vpc.name
     subnetwork = google_compute_subnetwork.network_subnet.name
