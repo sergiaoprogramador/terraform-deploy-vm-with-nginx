@@ -1,0 +1,15 @@
+- name: Create Server
+  hosts: poc-terraform-ansible
+  vars:
+    service_account_file: ../auth/poc-gcp-terraform-372512-ceed0dca65a2.json
+    project: poc-gcp-terraform-372512
+    auth_kind: serviceaccount
+    scopes:
+      - https://www.googleapis.com/auth/compute
+  tasks:
+  - name: criando o arquivo
+    copy:
+      dest: /home/ubuntu/index.html
+      content: <h1>Feito com terraform e ansible</h1>
+  - name: criando o servidor
+    shell: "nohup busybox httpd -f -p 8080 &"
