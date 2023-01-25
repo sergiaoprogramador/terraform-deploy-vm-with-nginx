@@ -1,5 +1,0 @@
-plugin: gcp_compute
-projects:
-  - poc-gcp-terraform-372512
-auth_kind: serviceaccount
-service_account_file: ../auth/poc-gcp-terraform-372512-ceed0dca65a2.json"
